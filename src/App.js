@@ -1,11 +1,14 @@
-import Home from "./components/Home"
+import Home from "./pages/Home"
 import Navbar from "./components/Navbar";
+import { Outlet } from "react-router-dom";
 
 export const App = () => {
   return (
-    <div className=" bg-neutral-50 h-screen w-screen">
+    <div className=" bg-gray-50 h-screen w-screen">
       <Navbar/>
-      <Home/>
+      <Outlet/>
     </div>
   );
 }
+
+export default App;
