@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <div className="border-0 px-8 py-4
              bg-transparent text-neutral-500 
-             grid grid-cols-8 gap-4 text-content tracking-wider	"
+             grid grid-cols-8 gap-4 text-content tracking-wider absolute top-0"
         >
             <div className="col-start1 col-end-2 justify-left flex">
                 <Button route="/" icon={<HomeIcon className='h-5 w-5'/>} text={'Home'}/>

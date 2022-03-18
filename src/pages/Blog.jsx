@@ -1,6 +1,6 @@
 const Blog = () => {
     return (
-        <div className="mt-16 mx-[100px]">
+        <div className="mt-16">
             <div className="border container mx-auto text-center h-40
                 text-subtitle bg-white rounded-lg text-neutral-500
                 p-10

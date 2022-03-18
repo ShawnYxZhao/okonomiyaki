@@ -6,14 +6,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'sans': ['Helvetica'],
-      },
+      // fontFamily: {
+      //   'sans': ['Helvetica'],
+      // },
       fontSize: {
         'title': '30px',
-        'subtitle': '22px',
+        'subtitle': '18px',
         'content': '15px',
       },
+      width: {
+        'content': '680px',
+      }
     },
   },
   plugins: [],
