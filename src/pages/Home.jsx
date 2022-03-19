@@ -30,16 +30,16 @@ const Home = () => {
             </div>
             <div className='grid grid-cols-5 gap-4 mt-3'>
                 <div className='text-content'>
-                    <Button type="BIO" icon={<FaGithub className=''/>} text="Github"></Button>
+                    <Button type="INFO" icon={<FaGithub className=''/>} text="Github"></Button>
                 </div>
                 <div className='text-content'>
-                    <Button type="BIO" icon={<FaLinkedin className='text-blue-500'/>} text="LinkedIn"></Button>
+                    <Button type="INFO" icon={<FaLinkedin className='text-blue-500'/>} text="LinkedIn"></Button>
                 </div>
                 <div className='text-content'>
-                    <Button type="BIO" icon={<SiRiotgames className='text-red-500'/>} text="League"></Button>
+                    <Button type="INFO" icon={<SiRiotgames className='text-red-500'/>} text="League"></Button>
                 </div>
                 <div className='text-content col-start-4 col-span-2'>
-                    <Button type="BIO" icon={<FaExpand className=''/>} text="More"></Button>
+                    <Button type="INFO" icon={<FaExpand className=''/>} text="More"></Button>
                 </div>
             </div>
         </div>

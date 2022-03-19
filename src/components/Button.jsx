@@ -12,7 +12,7 @@ const Button = (props) => {
                     </div>
                 </Link>
             );
-        case "BIO":
+        case "INFO":
             return (
                 <Link to={route}>
                     <div className="border border-gray-300 bg-white cursor-pointer 
