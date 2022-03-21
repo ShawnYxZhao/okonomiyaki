@@ -14,13 +14,13 @@ const Button = (props) => {
             );
         case "INFO":
             return (
-                <Link to={route}>
+                <a target='_blank' href={route}>
                     <div className="border border-gray-300 bg-white cursor-pointer 
                     hover:shadow-md rounded-md flex gap-1 justify-center py-1">
                         <div className="self-center">{icon}</div>
                         {text}
                     </div>
-                </Link>
+                </a>
             );
     }
 }
