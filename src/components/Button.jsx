@@ -14,7 +14,7 @@ const Button = (props) => {
             );
         case "INFO":
             return (
-                <a target='_blank' href={route}>
+                <a target='_self' href={route}>
                     <div className="border border-gray-300 bg-white cursor-pointer 
                     hover:shadow-md rounded-md flex gap-1 justify-center py-1">
                         <div className="self-center">{icon}</div>

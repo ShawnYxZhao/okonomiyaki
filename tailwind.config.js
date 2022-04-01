@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       // fontFamily: {
-      //   'sans': ['Helvetica'],
+      //   'sans': [...defaultTheme.fontFamily.sans, 'STHeiti'],
       // },
       fontSize: {
         'title': '30px',
@@ -15,7 +15,8 @@ module.exports = {
         'content': '15px',
       },
       width: {
-        'content': '680px',
+        'home': '680px',
+        'blog': '900px',
       }
     },
   },

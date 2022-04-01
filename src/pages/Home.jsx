@@ -1,16 +1,24 @@
 // External Modules
 import TypeAnimation from 'react-type-animation';
+import axios from 'axios';
 
 // Components
 import Button from '../components/Button';
+import Card from '../components/Card';
+
+// Hooks
+import useFetch from '../hooks/useFetch'
 
 // Icons
 import { FaGithub, FaLinkedin, FaExpand } from 'react-icons/fa'; 
 import { SiRiotgames } from 'react-icons/si'
 
 const Home = () => {
+    const { loading, error, data } = useFetch('http://localhost:1337/api/posts?sort[0]=id%3Adesc');
+    
+    if (loading) return <p>Loading...</p>
     return (
-        <div className="">
+        <div className="w-home mx-auto">
             <div className='bio'>
                 <div className="text-black text-title font-medium">
                     Hey, I'm Shawn!
@@ -20,7 +28,7 @@ const Home = () => {
                 <TypeAnimation
                     cursor={false}
                     repeat={Infinity}
-                    sequence={['gamer;', 3000, 'traveller;', 3000, 'developer;', 3000]}
+                    sequence={['developer;', 3000, 'travel lover;', 3000, 'gamer;', 3000]}
                     className="underline decoration-orange-300"
                     wrapper="span"
                 />
@@ -33,26 +41,19 @@ const Home = () => {
                     <Button type="INFO" route='https://github.com/ShawnYxZhao' icon={<FaGithub className=''/>} text="Github"></Button>
                 </div>
                 <div className='text-content'>
-                    <Button type="INFO" route='https://www.linkedin.com/in/yuxiao-shawn-zhao-652908193/' icon={<FaLinkedin className='text-blue-500'/>} text="LinkedIn"></Button>
+                    <Button type="INFO" route='https://www.linkedin.com/in/yuxiao-shawn-zhao-652908193/' icon={<FaLinkedin className='text-blue-5000'/>} text="LinkedIn"></Button>
                 </div>
                 <div className='text-content'>
-                    <Button type="INFO" route='https://na.op.gg/summoners/na/Nw4Hs' icon={<SiRiotgames className='text-red-500'/>} text="League"></Button>
+                    <Button type="INFO" route='https://na.op.gg/summoners/na/Nw4Hs' icon={<SiRiotgames className='text-red-5000'/>} text="League"></Button>
                 </div>
                 <div className='text-content col-start-4 col-span-2'>
                     <Button type="INFO" icon={<FaExpand className=''/>} text="More"></Button>
                 </div>
             </div>
-            <div className='posts mt-10'>
-                <div className="">
-                    <div className="border text-center
-                        bg-white rounded-lg shadow-inner
-                        p-10 h-fit
-                    "> 
-                        <div className='text-title text-black'>
-                            第一篇博客
-                        </div>
-                    </div> 
-                </div>
+            <div className='posts'>
+                {data.map(post => (
+                    <Card id={post.id} post={post.attributes}/>
+                ))}
             </div>
         </div>
     );
