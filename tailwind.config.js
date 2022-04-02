@@ -11,8 +11,10 @@ module.exports = {
       // },
       fontSize: {
         'title': '30px',
+        'cardtitle': '22px',
         'subtitle': '18px',
         'content': '15px',
+        'label': '12px',
       },
       width: {
         'home': '680px',
