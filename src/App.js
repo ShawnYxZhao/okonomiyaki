@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar";
 import { useState } from 'react';
 
 const App = () => {
-    const [showCover, setShowCover] = useState(false);
     const main = (
       <>
         <Navbar/>
@@ -24,16 +23,10 @@ const App = () => {
         </main>
       </>
     );
-
-    const cover = (
-      <>
-        <div onClick={() => setShowCover(false)}>Click ME</div>
-      </>
-    );
     return (
         <BrowserRouter>
           <div className="bg-white min-h-screen w-screen">
-            { showCover? cover: main }
+            { main }
           </div>
         </BrowserRouter>
     );

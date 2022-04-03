@@ -23,7 +23,7 @@ const Card = (props) => {
                     </div>
                 </div>
                 <div className="px-5 py-2.5 h-fit text-label text-gray-500">
-                    {`Published on ${date}`}
+                    {`Posted on ${date}`}
                 </div>
             </div>
         </Link>

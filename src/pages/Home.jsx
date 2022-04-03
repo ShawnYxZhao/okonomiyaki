@@ -18,7 +18,6 @@ import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import { ImGithub } from "react-icons/im";
 
 const Home = () => {
-    const [showHome, setShowHome] = useState(false);
     const { loading, error, data } = useFetch('http://localhost:1337/api/posts?sort[0]=id%3Adesc');
     
     if (loading) return <p>Loading...</p>

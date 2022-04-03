@@ -9,16 +9,21 @@ const Blog = () => {
     const { loading, error, data } = useFetch(`http://localhost:1337/api/posts/${id}`);
 
     if (loading) return <p>Loading</p>;
-    const { attributes: { title, content } } = data;
-    const html = marked.parse(`# This is a header\n\n\nAnd this is a paragraph`);
+
+    const { attributes: { title, content, publishedAt } } = data;
+    const date = new Date(publishedAt).toDateString();
+
     return (  
-        <div className="border
+        <div className="border-0
                 bg-white rounded-lg text-gray-500
-            py-10 px-20 h-fit w-blog mx-auto
+            p-10 h-fit w-home mx-auto
         ">
-            <div className="text-black text-title text-center font-medium">
+            <div className="text-black text-title font-medium mb-1 ">
                 {title}
             </div>
+            <div className=" text-label text-gray-500 mb-5">
+                    {`Posted on ${date} · ${content.length} words`}
+                </div>
             <div className="text-black">
                 <ReactMarkdown remarkPlugins={[remarkBreaks]} children={content}/>
             </div>

@@ -2,18 +2,23 @@ import { useState } from 'react';
 import TypeAnimation from 'react-type-animation';
 import Typed from 'react-typed';
 import Typist from 'react-text-typist';
-
+import { CursorClickIcon } from '@heroicons/react/solid';
 
 
 
 const Cover = () => {
     const [showHome, setShowHome] = useState(false);
+    const [visited, setVisited] = useState(false);
+    const clickCover = () => {
+        setShowHome(true);
+        setTimeout(() => setVisited(true), 5000);
+    }
     return (
         <div 
-        className={`cover fixed top-0 w-screen h-screen bg-white ${showHome && 'transition-opacity duration-1000 opacity-0'}`}
-        onClick={() => setShowHome(true)}
+        className={`cover fixed top-0 w-screen h-screen bg-white ${visited && 'hidden'} ${showHome && !visited && 'animate-fadeOut'}`}
+        onClick={clickCover}
         >
-            <div className='group w-fit mx-auto text-center font-medium absolute top-72 left-0 right-0'>
+            <div className='group mx-auto text-center font-medium absolute top-72 left-0 right-0'>
                 {/* <Typed
                     className='text-title'
                     strings={['Hey, I\'m Shawn', '你好，我是Shawn']}
@@ -33,12 +38,7 @@ const Cover = () => {
                     cursorSmooth
                     cursorBlinkSpeed={1500}
                 />
-                {/* <div className='border-gray-400 text-content border-0 w-fit mx-auto py-1 px-16 rounded-lg mt-10 font-medium
-                                  hover:shadow-md hover:cursor-pointer	'
-                    onClick={() => setShowHome(true)}                 
-                >
-                    Enter
-                </div> */}
+                
             </div>
         </div>
     );
