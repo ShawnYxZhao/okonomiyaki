@@ -1,10 +1,12 @@
 // External Modules
 import TypeAnimation from 'react-type-animation';
 import axios from 'axios';
+import { useState } from 'react';
 
 // Components
 import Button from '../components/Button';
 import Card from '../components/Card';
+import Cover from './Cover';
 
 // Hooks
 import useFetch from '../hooks/useFetch';
@@ -16,11 +18,14 @@ import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import { ImGithub } from "react-icons/im";
 
 const Home = () => {
+    const [showHome, setShowHome] = useState(false);
     const { loading, error, data } = useFetch('http://localhost:1337/api/posts?sort[0]=id%3Adesc');
     
     if (loading) return <p>Loading...</p>
     console.log(data);
     return (
+        <>
+        <Cover/>
         <div className="w-home mx-auto">
             <div className='bio'>
                 <div className="text-black text-title font-medium">
@@ -39,7 +44,7 @@ const Home = () => {
                     Previously at <span className='text-red-500 font-normal'>Nextroll</span> as Frontend Engineer, <span className='text-lime-500 font-normal'>Oanda</span> as Fullstack Developer;</div>
                 </div>
             </div>
-            <div className='info grid grid-cols-6 gap-4 mt-3'>
+            <div className='info grid grid-cols-5 gap-4 mt-3'>
                 <div className='text-content'>
                     <Button type="INFO" route='https://github.com/ShawnYxZhao' icon={<ImGithub className='h-5'/>} text=""></Button>
                 </div>
@@ -59,6 +64,8 @@ const Home = () => {
                 ))}
             </div>
         </div>
+        </>
+        
     );
 }
 

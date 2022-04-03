@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ReactMarkdown from 'react-markdown'
 
 const Card = (props) => {
     const { post, id } = props;
@@ -7,7 +8,7 @@ const Card = (props) => {
     return (
         <Link to={`/post/${id}`}>
             <div className="shadow-none hover:shadow-lg hover:cursor-pointer
-                            border rounded-lg bg-white mt-10
+                            border rounded-lg bg-white mt-10 group
             ">
                 <div className="text-center px-5 py-8 h-fit border-b border-gray-100
                 "> 
@@ -16,8 +17,9 @@ const Card = (props) => {
                     '>
                         {title}
                     </div>
-                    <div className='text-content text-gray-500 text-left'>
-                        {content.substring(0, 80)+'...'}
+                    <div className='text-content text-gray-500 text-left
+                    '>
+                        <ReactMarkdown children={content.substring(0, 80)+'...'}/>
                     </div>
                 </div>
                 <div className="px-5 py-2.5 h-fit text-label text-gray-500">
