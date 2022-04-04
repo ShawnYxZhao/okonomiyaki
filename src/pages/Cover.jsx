@@ -6,12 +6,13 @@ import { CursorClickIcon } from '@heroicons/react/solid';
 
 
 
-const Cover = () => {
+const Cover = (props) => {
     const [showHome, setShowHome] = useState(false);
-    const [visited, setVisited] = useState(false);
+    //const [visited, setVisited] = useState(false);
+    const {visited, setVisited} = props;
     const clickCover = () => {
         setShowHome(true);
-        setTimeout(() => setVisited(true), 5000);
+        setTimeout(() => setVisited(true), 1200);
     }
     return (
         <div 

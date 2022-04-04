@@ -10,12 +10,13 @@ import Navbar from "./components/Navbar";
 import { useState } from 'react';
 
 const App = () => {
+    const [v, setV] = useState(false);
     const main = (
       <>
         <Navbar/>
         <main className="h-auto pt-32">
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<Home v={v} setV={setV}/>}/>
           <Route path="/post/:id" element={<Blog/>}/>
           <Route path="/travel" element={<Travel/>}/>
           <Route path="/dashboard" element={<Board/>}/>

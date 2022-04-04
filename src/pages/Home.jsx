@@ -17,14 +17,14 @@ import { SiRiotgames } from 'react-icons/si';
 import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import { ImGithub } from "react-icons/im";
 
-const Home = () => {
+const Home = (props) => {
     const { loading, error, data } = useFetch('http://localhost:1337/api/posts?sort[0]=id%3Adesc');
-    
+    const {v, setV} = props; 
     if (loading) return <p>Loading...</p>
     console.log(data);
     return (
         <>
-        <Cover/>
+        <Cover visited={v} setVisited={setV}/>
         <div className="w-home mx-auto">
             <div className='bio'>
                 <div className="text-black text-title font-medium">
