@@ -18,7 +18,7 @@ import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import { ImGithub } from "react-icons/im";
 
 const Home = (props) => {
-    const { loading, error, data } = useFetch('http://localhost:1337/api/posts?sort[0]=id%3Adesc');
+    const { loading, error, data } = useFetch('https://mochi1.herokuapp.com/api/posts?sort[0]=id%3Adesc');
     const {v, setV} = props; 
     if (loading) return <p>Loading...</p>
     console.log(data);

@@ -6,7 +6,7 @@ import { marked } from 'marked'
 
 const Blog = () => {
     const { id } = useParams();
-    const { loading, error, data } = useFetch(`http://localhost:1337/api/posts/${id}`);
+    const { loading, error, data } = useFetch(`https://mochi1.herokuapp.com/api/posts/${id}`);
 
     if (loading) return <p>Loading</p>;
 
