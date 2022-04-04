@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom"
 import ReactMarkdown from 'react-markdown'
 import remarkBreaks from 'remark-breaks'
 import { marked } from 'marked'
+import Loading from "./Loading"
 
 const Blog = () => {
     const { id } = useParams();
     const { loading, error, data } = useFetch(`https://mochi1.herokuapp.com/api/posts/${id}`);
 
-    if (loading) return <p>Loading</p>;
+    if (loading) return <Loading/>;
 
     const { attributes: { title, content, publishedAt } } = data;
     const date = new Date(publishedAt).toDateString();

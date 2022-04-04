@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import Cover from './Cover';
+import Loading from './Loading';
 
 // Hooks
 import useFetch from '../hooks/useFetch';
@@ -20,7 +21,11 @@ import { ImGithub } from "react-icons/im";
 const Home = (props) => {
     const { loading, error, data } = useFetch('https://mochi1.herokuapp.com/api/posts?sort[0]=id%3Adesc');
     const {v, setV} = props; 
-    if (loading) return <p>Loading...</p>
+    if (loading && !v) {
+        return <Cover/>;
+    } else if (loading) {
+        return <Loading/>;
+    }
     console.log(data);
     return (
         <>
