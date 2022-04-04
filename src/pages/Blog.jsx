@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown'
 import remarkBreaks from 'remark-breaks'
 import { marked } from 'marked'
 import Loading from "./Loading"
+import MDEditor from '@uiw/react-md-editor';
+
 
 const Blog = () => {
     const { id } = useParams();
@@ -26,7 +28,7 @@ const Blog = () => {
                     {`Posted on ${date} · ${content.length} words`}
                 </div>
             <div className="text-black">
-                <ReactMarkdown remarkPlugins={[remarkBreaks]} children={content}/>
+                <MDEditor.Markdown source={content} />
             </div>
         </div> 
     );
