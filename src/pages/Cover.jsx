@@ -31,7 +31,7 @@ const Cover = (props) => {
                 /> */}
                 <Typist
                     className='text-[40px]'
-                    sentences={['Hey, I\'m Shawn!', '你好，我是肖恩!', 'Bonjour, je suis Shawn!', 'こんにちは、私はショーンです!',]} 
+                    sentences={['Hey, I\'m Shawn!', '你好，我是Shawn!', 'Bonjour, je suis Shawn!', 'こんにちは、私はショーンです!',]} 
                     loop={true}
                     typingSpeed={180}
                     deletingSpeed={50}
