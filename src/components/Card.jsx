@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 
 const Card = (props) => {
     const { post, id } = props;
-    const { title, content, publishedAt } = post;
+    const { title, preview, publishedAt } = post;
     const date = new Date(publishedAt).toDateString();
     return (
         <Link to={`/post/${id}`}>
@@ -19,7 +19,7 @@ const Card = (props) => {
                     </div>
                     <div className='text-content text-gray-500 text-left
                     '>
-                        <ReactMarkdown children={content.substring(0, 80)+'...'}/>
+                        <ReactMarkdown children={preview.substring(0, 80)+'...'}/>
                     </div>
                 </div>
                 <div className="px-5 py-2.5 h-fit text-label text-gray-500">

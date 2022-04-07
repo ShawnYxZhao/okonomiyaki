@@ -1,7 +1,5 @@
 // External Modules
 import TypeAnimation from 'react-type-animation';
-import axios from 'axios';
-import { useState } from 'react';
 
 // Components
 import Button from '../components/Button';
@@ -15,7 +13,7 @@ import useFetch from '../hooks/useFetch';
 // Icons
 import { FaLinkedin } from 'react-icons/fa'; 
 import { SiRiotgames } from 'react-icons/si';
-import { DotsHorizontalIcon } from '@heroicons/react/solid';
+import { ChatAlt2Icon, PencilAltIcon } from '@heroicons/react/solid';
 import { ImGithub } from "react-icons/im";
 
 const Home = (props) => {
@@ -59,7 +57,7 @@ const Home = (props) => {
                     <Button type="INFO" route='https://na.op.gg/summoners/na/Nw4Hs' icon={<SiRiotgames className='h-5'/>} text=""></Button>
                 </div>
                 <div className='text-content col-start-4 col-span-3'>
-                    <Button type="INFO" icon={<DotsHorizontalIcon className='h-5'/>} text=""></Button>
+                    <Button type="MSG" route='/message' icon={<ChatAlt2Icon className='h-5'/>} text="Leave a message"></Button>
                 </div>
             </div>
             <div className='posts'>

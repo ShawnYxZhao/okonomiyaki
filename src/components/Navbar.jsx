@@ -1,6 +1,6 @@
 // Icons
 //import { HomeIcon, ChartPieIcon, GlobeIcon, PencilAltIcon } from '@heroicons/react/outline'
-import { HomeIcon, LocationMarkerIcon, AdjustmentsIcon } from '@heroicons/react/solid'
+import { HomeIcon, LocationMarkerIcon, AdjustmentsIcon, PencilAltIcon, BookmarkAltIcon } from '@heroicons/react/solid'
 
 // Components
 import Button from './Button';
@@ -14,7 +14,8 @@ const Navbar = () => {
             <div className="col-start1 col-end-2 justify-left flex">
                 <Button route="/" icon={<HomeIcon className='h-5 w-5'/>} text={'Home'}/>
             </div>
-            <div className="col-start-8 col-end-9 justify-end flex gap-1">
+            <div className="col-start-8 col-end-9 justify-end flex gap-0">
+                <Button route="/travel" icon={<BookmarkAltIcon className='h-5 w-5'/>} text={'Jotting'}/>
                 <Button route="/travel" icon={<LocationMarkerIcon className='h-5 w-5'/>} text={'Travel'}/>
                 <Button route="/travel" icon={<AdjustmentsIcon className='h-5 w-5'/>} text={'Panel'}/>
             </div>

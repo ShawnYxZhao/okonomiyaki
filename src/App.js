@@ -6,6 +6,7 @@ import Blog from './pages/Blog';
 import Travel from './pages/Travel';
 import Board from './pages/Board';
 import Navbar from "./components/Navbar";
+import Message from './pages/Message';
 
 import { useState } from 'react';
 
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/post/:id" element={<Blog/>}/>
           <Route path="/travel" element={<Travel/>}/>
           <Route path="/dashboard" element={<Board/>}/>
+          <Route path="/message" element={<Message/>}/>
         </Routes>
         </main>
       </>
