@@ -10,7 +10,7 @@ const Jotting = () => {
         <div className="w-home mx-auto p-10
         ">
             <div className="text-title mb-5">
-                Jottings
+                Jottings 随笔
             </div>
             <div className="flex flex-col gap-10">
             {data.map(jotting => (

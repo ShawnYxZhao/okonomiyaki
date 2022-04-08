@@ -2,7 +2,7 @@ import Comments from "../components/Comments";
 
 const Message = () => {
     return (
-        <Comments title="Messages"/>
+        <Comments title="Messages 留言"/>
         
     );
 }
