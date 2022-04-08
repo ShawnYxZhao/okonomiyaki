@@ -7,6 +7,7 @@ import Travel from './pages/Travel';
 import Board from './pages/Board';
 import Navbar from "./components/Navbar";
 import Message from './pages/Message';
+import Jotting from './pages/Jotting';
 
 import { useState } from 'react';
 
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/travel" element={<Travel/>}/>
           <Route path="/dashboard" element={<Board/>}/>
           <Route path="/message" element={<Message/>}/>
+          <Route path="/jotting" element={<Jotting/>}/>
         </Routes>
         </main>
       </>

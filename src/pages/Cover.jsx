@@ -12,7 +12,7 @@ const Cover = (props) => {
     const {visited, setVisited} = props;
     const clickCover = () => {
         setShowHome(true);
-        setTimeout(() => setVisited(true), 1200);
+        setTimeout(() => setVisited(true), 500);
     }
     return (
         <div 
