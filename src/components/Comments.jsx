@@ -1,6 +1,62 @@
 import { ReplyIcon } from '@heroicons/react/solid'
 import useFetch from '../hooks/useFetch';
 import Loading from '../pages/Loading';
+import { useState } from 'react';
+
+const CommentInput = (props) => {
+    const [comment, setComment] = useState('');
+    const [name, setName] = useState('');
+    const { render, setRender, title } = props;
+
+    const handleSubmit = () => {
+        if (!name || !comment) return;
+        fetch('https://mochi1.herokuapp.com/api/messages', {
+            method: 'POST',
+            body: JSON.stringify({
+                'data':{
+                    'name':name,
+                    'content':comment
+                }
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then(()=>{
+            setName('');
+            setComment('');
+            setRender(!render);
+        })
+    }
+
+    return (
+        <div className="border-0 border-b-0 bg-white rounded-t-lg text-gray-500
+            p-10 pb-5 h-fit w-home mx-auto flex flex-col gap-5
+        ">
+            <div className="text-title text-black">{title}</div>
+            <div>
+            <div className="grid grid-cols-2">
+                <input placeholder="Name" value={name} onChange={e => setName(e.target.value)}
+                className="text-label  border border-b-0 rounded-tl-lg focus:outline-none px-4 py-1"/>
+                <div disabled
+                className="text-label border border-b-0 border-l-0 rounded-tr-lg focus:outline-none px-4 py-1"/>
+            </div>
+            <textarea placeholder="Leave a message! 🥸" value={comment} onChange={e => setComment(e.target.value)}
+                className="block text-content resize-none border h-32 w-full p-4 focus:outline-none
+            "/>
+            <div className="grid grid-cols-2">
+                <div placeholder="Who are you 🤔"
+                className="text-label border border-t-0 rounded-bl-lg focus:outline-none px-4 py-1"/>
+                <div onClick={handleSubmit}
+                className="text-label border border-l-0 border-t-0 rounded-br-lg focus:outline-none px-4 py-1
+                         text-center active:shadow-inner hover:cursor-pointer
+                ">
+                    Submit
+                </div>
+            </div>
+            </div>
+      </div>
+    );
+}
 
 const Comment = (props) => {
     const { isReply, message } = props;
@@ -14,9 +70,9 @@ const Comment = (props) => {
             </div>
             <div className="flex flex-col gap-1">
                 <div className='flex gap-2'>
-                    <div className="leading-tight text-label text-black">{name}</div>
+                    <div className="leading-snug text-label text-black">{name}</div>
                 </div>
-                <div className="leading-snug text-content">{content}</div>
+                <div className="leading-tight text-content">{content}</div>
             </div>
         </div>
     );
@@ -30,10 +86,14 @@ const Reply = () => {
     );
 }
 
-const Comments = () => {
-    const { loading, error, data } = useFetch(`https://mochi1.herokuapp.com/api/messages?sort[0]=id%3Adesc`);
+const Comments = (props) => {
+    const {title} = props;
+    const [render, setRender] = useState(false);
+    const { loading, error, data } = useFetch(`https://mochi1.herokuapp.com/api/messages?sort[0]=id%3Adesc`, render);
     if (loading) return <Loading/>;
     return (
+        <>
+        <CommentInput render={render} setRender={setRender} title={title}/>
         <div className="border-0 bg-white rounded-lg text-gray-500
             p-10 h-fit w-home mx-auto flex flex-col gap-6
         ">
@@ -43,6 +103,7 @@ const Comments = () => {
                 </div>
             ))}
         </div>
+        </> 
     );
 }
 
