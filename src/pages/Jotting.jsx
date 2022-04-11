@@ -5,7 +5,6 @@ import Loading from "./Loading";
 const Jotting = () => {
     const { loading, error, data } = useFetch('https://mochi1.herokuapp.com/api/jottings?sort[0]=id%3Adesc');
     if (loading) return <Loading/>;
-    console.log(data);
     return (
         <div className="w-home mx-auto p-10
         ">

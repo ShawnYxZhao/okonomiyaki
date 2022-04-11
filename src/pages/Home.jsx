@@ -9,6 +9,7 @@ import Loading from './Loading';
 
 // Hooks
 import useFetch from '../hooks/useFetch';
+import { useSelector } from 'react-redux';
 
 // Icons
 import { FaLinkedin } from 'react-icons/fa'; 
@@ -16,18 +17,17 @@ import { SiRiotgames } from 'react-icons/si';
 import { ChatAlt2Icon, PencilAltIcon } from '@heroicons/react/solid';
 import { ImGithub } from "react-icons/im";
 
-const Home = (props) => {
+const Home = () => {
     const { loading, error, data } = useFetch('https://mochi1.herokuapp.com/api/posts?sort[0]=id%3Adesc');
-    const {v, setV} = props; 
-    if (loading && !v) {
+    const { visited } = useSelector((state) => state.vitals);
+    if (loading && !visited) {
         return <Cover/>;
     } else if (loading) {
         return <Loading/>;
     }
-    console.log(data);
     return (
         <>
-        <Cover visited={v} setVisited={setV}/>
+        <Cover/>
         <div className="w-home mx-auto">
             <div className='bio'>
                 <div className="text-black text-title font-medium">

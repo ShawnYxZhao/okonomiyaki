@@ -8,17 +8,18 @@ import Board from './pages/Board';
 import Navbar from "./components/Navbar";
 import Message from './pages/Message';
 import Jotting from './pages/Jotting';
+import { Provider } from 'react-redux';
+import store from './store';
 
 import { useState } from 'react';
 
 const App = () => {
-    const [v, setV] = useState(false);
     const main = (
       <>
         <Navbar/>
         <main className="h-auto pt-32">
         <Routes>
-          <Route path="/" element={<Home v={v} setV={setV}/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/post/:id" element={<Blog/>}/>
           <Route path="/travel" element={<Travel/>}/>
           <Route path="/dashboard" element={<Board/>}/>
@@ -29,11 +30,13 @@ const App = () => {
       </>
     );
     return (
+      <Provider store={store}>
         <BrowserRouter>
           <div className="bg-white min-h-screen w-screen">
             { main }
           </div>
         </BrowserRouter>
+      </Provider>
     );
 }
 

@@ -3,16 +3,18 @@ import TypeAnimation from 'react-type-animation';
 import Typed from 'react-typed';
 import Typist from 'react-text-typist';
 import { CursorClickIcon } from '@heroicons/react/solid';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateVitals } from '../actions/vitals';
 
 
-
-const Cover = (props) => {
+const Cover = () => {
     const [showHome, setShowHome] = useState(false);
-    //const [visited, setVisited] = useState(false);
-    const {visited, setVisited} = props;
+    const { visited } = useSelector((state) => state.vitals);
+    const dispatch = useDispatch();
+
     const clickCover = () => {
         setShowHome(true);
-        setTimeout(() => setVisited(true), 500);
+        setTimeout(() => dispatch(updateVitals({visited:true})), 1000);
     }
     return (
         <div 
