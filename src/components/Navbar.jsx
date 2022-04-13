@@ -7,7 +7,7 @@ import Button from './Button';
 
 const Navbar = () => {
     return (
-        <div className="border-0 px-8 py-4
+        <div className="border-0 px-8 py-4 z-10
              bg-white text-neutral-500 w-full
              grid grid-cols-8 gap-4 text-content tracking-wider fixed top-0"
         >
