@@ -35,7 +35,9 @@ const Blog = () => {
                     {`Posted on ${date} · ${content.length} words`}
                 </div>
             <div className="text-black">
-                <MDEditor.Markdown source={content} />
+                <div data-color-mode="light">
+                    <MDEditor.Markdown data-color-mode="light" source={content} />
+                </div>
             </div>
         </div> 
     );
