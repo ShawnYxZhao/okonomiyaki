@@ -40,11 +40,11 @@ const CommentInput = (props) => {
                 <div disabled
                 className="text-label border border-b-0 border-l-0 rounded-tr-lg focus:outline-none px-4 py-1"/>
             </div>
-            <textarea placeholder="Leave a message! 🥸" value={comment} onChange={e => setComment(e.target.value)}
+            <textarea placeholder="Leave a message! 🙂" value={comment} onChange={e => setComment(e.target.value)}
                 className="block text-content resize-none border h-32 w-full p-4 focus:outline-none
             "/>
             <div className="grid grid-cols-2">
-                <div placeholder="Who are you 🤔"
+                <div
                 className="text-label border border-t-0 rounded-bl-lg focus:outline-none px-4 py-1"/>
                 <div onClick={handleSubmit}
                 className="text-label border border-l-0 border-t-0 rounded-br-lg focus:outline-none px-4 py-1
