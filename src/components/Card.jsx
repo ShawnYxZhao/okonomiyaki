@@ -37,10 +37,7 @@ const Card = (props) => {
                                     border rounded-lg bg-white group
                     ">
                         <div className=" px-6 py-6 h-fit border-b border-gray-100
-                        "> 
-                            <div className='mb-1 text-subtitle text-black text-left font-medium'>
-                                {jotting.title}
-                            </div>
+                        ">
                             <div className="h-fit text-label text-gray-500 mb-2">
                             {date}
                             </div>
