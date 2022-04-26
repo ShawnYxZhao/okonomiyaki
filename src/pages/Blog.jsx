@@ -21,13 +21,13 @@ const Blog = () => {
                 bg-white rounded-lg text-gray-500
             p-10 h-fit w-home mx-auto
         ">
-            <div className="mb-10">
+            {/* <div className="mb-10">
             <audio 
                 controls
                 autoPlay
                 src={`https://mochi1.herokuapp.com${url}`}
             />
-            </div>
+            </div> */}
             <div className="text-black text-title font-medium mb-1 ">
                 {title}
             </div>
