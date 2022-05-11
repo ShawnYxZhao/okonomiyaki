@@ -15,7 +15,7 @@ The name okonomiyaki originated from the famous Japanese pancake dish, which is 
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/97186212/167752921-897eeafa-97b6-429d-a338-a288bd2d09bb.jpeg">  
 
 
-I see my personal website very similar to okonomiyaki, because I want to share different things happened in my life on this very website. Such as my thinkings, learnings, travel experience and so on. It can be very random and I don't want to give it a fixed purpose.
+I see my personal website very similar to okonomiyaki, because I want to share different things happened in my life on this very website. Such as my thinkings, learnings, travel experience and so on. The contents can be very random, just like ingredients used in okonomiyaki.
 
 ---
 
